@@ -1,0 +1,12 @@
+version: "3"
+services:
+  env_test:
+    image: env_test
+    build:
+      context: .
+      args:
+        - FOO="defined in build args of docker-compose.yml"
+    env_file:
+      - ./foo.env
+    environment:
+      - FOO="defined in environment of docker-compose.yml"
